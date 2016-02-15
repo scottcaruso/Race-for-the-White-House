@@ -14,6 +14,8 @@
 		3C07CDFD1C7271B0007F01BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C07CDFB1C7271B0007F01BF /* LaunchScreen.storyboard */; };
 		3C07CE051C727347007F01BF /* Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE041C727347007F01BF /* Traits.swift */; };
 		3C07CE071C727B1D007F01BF /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE061C727B1D007F01BF /* Candidate.swift */; };
+		3C07CE091C727DAD007F01BF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE081C727DAD007F01BF /* State.swift */; };
+		3C07CE0B1C727E63007F01BF /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE0A1C727E63007F01BF /* Simulation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3C07CDFE1C7271B0007F01BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C07CE041C727347007F01BF /* Traits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traits.swift; sourceTree = "<group>"; };
 		3C07CE061C727B1D007F01BF /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		3C07CE081C727DAD007F01BF /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		3C07CE0A1C727E63007F01BF /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				3C07CDF41C7271B0007F01BF /* ViewController.swift */,
 				3C07CE041C727347007F01BF /* Traits.swift */,
 				3C07CE061C727B1D007F01BF /* Candidate.swift */,
+				3C07CE081C727DAD007F01BF /* State.swift */,
+				3C07CE0A1C727E63007F01BF /* Simulation.swift */,
 				3C07CDF61C7271B0007F01BF /* Main.storyboard */,
 				3C07CDF91C7271B0007F01BF /* Assets.xcassets */,
 				3C07CDFB1C7271B0007F01BF /* LaunchScreen.storyboard */,
@@ -144,6 +150,8 @@
 				3C07CDF51C7271B0007F01BF /* ViewController.swift in Sources */,
 				3C07CE051C727347007F01BF /* Traits.swift in Sources */,
 				3C07CDF31C7271B0007F01BF /* AppDelegate.swift in Sources */,
+				3C07CE091C727DAD007F01BF /* State.swift in Sources */,
+				3C07CE0B1C727E63007F01BF /* Simulation.swift in Sources */,
 				3C07CE071C727B1D007F01BF /* Candidate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

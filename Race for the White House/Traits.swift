@@ -21,6 +21,8 @@ class Traits {
   var notoriety = 20
   var intelligence = 20
   
+  let totalPersonal = 6
+  
   
   //Political traits
   //These are the traits that relate to a politician or state's POLITICAL leanings - as in, how they feel about a particular issue. These range from -50 to 50, with 0 being "true neutral." Negative numbers mean MORE liberal approaching -50, while positive numbers mean MORE conservative approaching 50.
@@ -151,6 +153,8 @@ class Traits {
   
   var climateChange = 0
   
+  let totalPolitical = 18
+  
   
   init() {
     //Traits should never be used with this default initializer, except for testing purposes.
@@ -181,5 +185,11 @@ class Traits {
     governmentSpending = thisGovernmentSpending
     gunControl = thisGunControl
     climateChange = thisClimateChange
+  }
+  
+  var averagePoliticalTraitValue: Double {
+    let issueSum = businessTaxes + childrensEducation + cleanEnergy + climateChange + criminalJustice + fracking + gayMarriage + governmentSpending + gunControl + homelandSecurity + immigration + legalPot + medicareMedicaid + outsourcing + postSecondaryEducation + socialSecurity + taxCode + universalHeathcare
+    let average = Double(issueSum)/Double(totalPolitical)
+    return average
   }
 }
