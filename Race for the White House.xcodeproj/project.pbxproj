@@ -16,6 +16,7 @@
 		3C07CE071C727B1D007F01BF /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE061C727B1D007F01BF /* Candidate.swift */; };
 		3C07CE091C727DAD007F01BF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE081C727DAD007F01BF /* State.swift */; };
 		3C07CE0B1C727E63007F01BF /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE0A1C727E63007F01BF /* Simulation.swift */; };
+		3C07CE0D1C729341007F01BF /* StatesForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE0C1C729341007F01BF /* StatesForTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3C07CE061C727B1D007F01BF /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		3C07CE081C727DAD007F01BF /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3C07CE0A1C727E63007F01BF /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
+		3C07CE0C1C729341007F01BF /* StatesForTesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesForTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				3C07CDF21C7271B0007F01BF /* AppDelegate.swift */,
 				3C07CDF41C7271B0007F01BF /* ViewController.swift */,
+				3C07CE0C1C729341007F01BF /* StatesForTesting.swift */,
 				3C07CE041C727347007F01BF /* Traits.swift */,
 				3C07CE061C727B1D007F01BF /* Candidate.swift */,
 				3C07CE081C727DAD007F01BF /* State.swift */,
@@ -152,6 +155,7 @@
 				3C07CDF31C7271B0007F01BF /* AppDelegate.swift in Sources */,
 				3C07CE091C727DAD007F01BF /* State.swift in Sources */,
 				3C07CE0B1C727E63007F01BF /* Simulation.swift in Sources */,
+				3C07CE0D1C729341007F01BF /* StatesForTesting.swift in Sources */,
 				3C07CE071C727B1D007F01BF /* Candidate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

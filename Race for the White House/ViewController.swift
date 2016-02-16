@@ -17,13 +17,16 @@ class ViewController: UIViewController {
   
     let candidateTwo = Candidate(thisName: "Donald Trump", thisExperience: 0, thisCharisma: 50, thisAttractiveness: 15, thisAuthenticity: 30, thisNoteriety: 50, thisIntelligence: 30, thisHealthcare: randomNegativeValue() , thisGayMarriage: randomNegativeValue() , thisHomelandSecurity: randomNegativeValue() , thisImmigration: randomNegativeValue() , thisTaxCode: randomNegativeValue(), thisBusinessTaxes: randomNegativeValue(), thisOutsourcing: randomNegativeValue() , thisCleanEnergy: randomNegativeValue() , thisLegalPot: randomNegativeValue() , thisCriminalJustice: randomNegativeValue() , thisChildrensEducation: randomNegativeValue(), thisPostSecondary: randomNegativeValue() , thisFracking: randomNegativeValue(), thisSocialSecurity: randomNegativeValue(), thisMedicareMedicaid: randomNegativeValue(), thisGovernmentSpending: randomNegativeValue(), thisGunControl: randomNegativeValue(), thisClimateChange: randomNegativeValue())
     
-    let ohio = State(thisState: "Ohio", thisPopulation: 10000000, thisPercent: 0.42, thisElectoralVotes: 18, thisExperience: 25, thisCharisma: 25, thisAttractiveness: 25, thisAuthenticity: 25, thisNoteriety: 25, thisIntelligence: 25, thisHealthcare: randomNegativeValue() , thisGayMarriage: randomNegativeValue() , thisHomelandSecurity: randomNegativeValue() , thisImmigration: randomNegativeValue() , thisTaxCode: randomNegativeValue(), thisBusinessTaxes: randomNegativeValue(), thisOutsourcing: randomNegativeValue() , thisCleanEnergy: randomNegativeValue() , thisLegalPot: randomNegativeValue() , thisCriminalJustice: randomNegativeValue() , thisChildrensEducation: randomNegativeValue(), thisPostSecondary: randomNegativeValue() , thisFracking: randomNegativeValue(), thisSocialSecurity: randomNegativeValue(), thisMedicareMedicaid: randomNegativeValue(), thisGovernmentSpending: randomNegativeValue(), thisGunControl: randomNegativeValue(), thisClimateChange: randomNegativeValue())
-    
     let simulationEngine = Simulation()
     
-    let winnerString = simulationEngine.calculateWinner(simulationEngine.getCandidatePerformance([candidateOne,candidateTwo], state: ohio), state: ohio)
-
-    print(winnerString)
+    let states = [alabama,alaska,arizona,arkansas,california,colorado,connecticut,delaware,florida,georgia,hawaii,idaho,illinois,indiana,iowa,kansas,kentucky,louisiana,maine,maryland,massachusetts,michigan,minnesota,mississippi,missouri,montana,nebraska,nevada,newHampshire,newJersey,newMexico,newYork,northCarolina,northDakota,ohio,oklahoma,oregon,pennsylvania,rhodeIsland,southCarolina,southDakota,tennessee,texas,utah,vermont,virginia,washington,westVirginia,wisconsin,wyoming,dc]
+    print("\(candidateOne.candidateName): \(candidateOne.averagePoliticalTraitValue)")
+    print("\(candidateTwo.candidateName): \(candidateTwo.averagePoliticalTraitValue)")
+    for state in states {
+      print("\(state.stateName): \(state.averagePoliticalTraitValue)")
+    }
+    
+    simulationEngine.electionNight([candidateOne,candidateTwo], states: states)
 }
   
   
@@ -33,8 +36,8 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  func randomNegativeValue() -> Int {
-    var value = Int(arc4random_uniform(51))
+  func randomNegativeValue() -> Double {
+    var value = (Double(arc4random())/Double(UINT32_MAX))*50
     let negativeRandomizer = Int(arc4random_uniform(2))
     if negativeRandomizer == 0 {
       value = 0 - value

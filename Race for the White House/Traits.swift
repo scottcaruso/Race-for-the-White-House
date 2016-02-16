@@ -32,126 +32,126 @@ class Traits {
   //      0 is maintenance of the current Obamacare plan
   //     50 is full repeal of Obamacare, no replacement, complete free-market, insurance-based and unregulated system
   
-  var universalHeathcare = 0
+  var universalHeathcare = 0.0
   
   // Gay rights
   //    -50 is pushing for a constitutional amendment that guarantees the rights of same-sex couples to marry
   //      0 is allowing the current rule of law to stay in place, and leaving the decision up to the states
   //     50 is pushing for a constitutional amendment that disallows same-sex marriages, dissolves any existing same-sex marriages, and nullifies any existing state laws guaranteeing these rights
   
-  var gayMarriage = 0
+  var gayMarriage = 0.0
   
   // Homeland security
   //    -50 is the abolishment of the Department of Homeland Security
   //      0 is no change to the current DHS system
   //     50 is full militarized homeland security, including madatory regular background checks on anyone with Middle-Eastern decent, a moritorium on immigration from the Middle East, and regular pre-emptive attacks on nations where terrorists may be hiding
   
-  var homelandSecurity = 0
+  var homelandSecurity = 0.0
   
   // Immigration
   // Need to author description for Immigration
   // 
   //
   
-  var immigration = 0
+  var immigration = 0.0
   
   // Tax Code
   // Need to author description
   //
   //
   
-  var taxCode = 0
+  var taxCode = 0.0
   
   // Business taxes
   // Need to author description
   //
   //
   
-  var businessTaxes = 0
+  var businessTaxes = 0.0
   
   // Outsourcing
   // Need to author description
   //
   //
   
-  var outsourcing = 0
+  var outsourcing = 0.0
   
   // Clean energy
   // Need to author description
   //
   //
   
-  var cleanEnergy = 0
+  var cleanEnergy = 0.0
   
   // Legalization of marijuana
   // Need to author description
   //
   //
   
-  var legalPot = 0
+  var legalPot = 0.0
   
   // Criminal justice reform
   // Need to author description
   //
   //
   
-  var criminalJustice = 0
+  var criminalJustice = 0.0
   
   // Education - Primary/Secondary
   // Need to author description
   //
   //
   
-  var childrensEducation = 0
+  var childrensEducation = 0.0
   
   // Education - Post-secondary
   // Need to author description
   //
   //
   
-  var postSecondaryEducation = 0
+  var postSecondaryEducation = 0.0
   
   // Fracking
   // Need to author description
   //
   //
   
-  var fracking = 0
+  var fracking = 0.0
   
   // Social Security
   // Need to author description
   //
   //
   
-  var socialSecurity = 0
+  var socialSecurity = 0.0
   
   // Medicare/Medicaid
   // Need to author description
   //
   //
   
-  var medicareMedicaid = 0
+  var medicareMedicaid = 0.0
   
   // National Debt / Government Spending
   // Need to author description
   //
   //
   
-  var governmentSpending = 0
+  var governmentSpending = 0.0
   
   // Gun control
   // Need to author description
   //
   //
   
-  var gunControl = 0
+  var gunControl = 0.0
   
   // Climate change
   // Need to author description
   //
   //
   
-  var climateChange = 0
+  var climateChange = 0.0
   
   let totalPolitical = 18
   
@@ -160,7 +160,7 @@ class Traits {
     //Traits should never be used with this default initializer, except for testing purposes.
   }
   
-  init(thisExperience: Int, thisCharisma:Int, thisAttractiveness: Int, thisAuthenticity: Int, thisNoteriety: Int, thisIntelligence: Int, thisHealthcare: Int, thisGayMarriage: Int, thisHomelandSecurity: Int, thisImmigration: Int, thisTaxCode: Int, thisBusinessTaxes: Int, thisOutsourcing: Int, thisCleanEnergy: Int, thisLegalPot: Int, thisCriminalJustice: Int, thisChildrensEducation: Int, thisPostSecondary: Int, thisFracking: Int, thisSocialSecurity: Int, thisMedicareMedicaid: Int, thisGovernmentSpending: Int, thisGunControl: Int, thisClimateChange: Int) {
+  init(thisExperience: Int, thisCharisma:Int, thisAttractiveness: Int, thisAuthenticity: Int, thisNoteriety: Int, thisIntelligence: Int, thisHealthcare: Double, thisGayMarriage: Double, thisHomelandSecurity: Double, thisImmigration: Double, thisTaxCode: Double, thisBusinessTaxes: Double, thisOutsourcing: Double, thisCleanEnergy: Double, thisLegalPot: Double, thisCriminalJustice: Double, thisChildrensEducation: Double, thisPostSecondary: Double, thisFracking: Double, thisSocialSecurity: Double, thisMedicareMedicaid: Double, thisGovernmentSpending: Double, thisGunControl: Double, thisClimateChange: Double) {
     experience = thisExperience
     charisma = thisCharisma
     attractiveness = thisAttractiveness
