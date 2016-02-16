@@ -16,7 +16,9 @@ class State: Traits {
   var stateElectoralVotes: Int
   //Need to create a class to handle political parties
   
-  init(thisState: String, thisPopulation: Int, thisPercent: Double, thisElectoralVotes: Int, thisExperience: Int, thisCharisma:Int, thisAttractiveness: Int, thisAuthenticity: Int, thisNoteriety: Int, thisIntelligence: Int, thisHealthcare: Double, thisGayMarriage: Double, thisHomelandSecurity: Double, thisImmigration: Double, thisTaxCode: Double, thisBusinessTaxes: Double, thisOutsourcing: Double, thisCleanEnergy: Double, thisLegalPot: Double, thisCriminalJustice: Double, thisChildrensEducation: Double, thisPostSecondary: Double, thisFracking: Double, thisSocialSecurity: Double, thisMedicareMedicaid: Double, thisGovernmentSpending: Double, thisGunControl: Double, thisClimateChange: Double)
+  var politicalParties = [(party:PoliticalParty,percentage:Double)]?()
+  
+  init(thisState: String, thisPopulation: Int, thisPercent: Double, thisElectoralVotes: Int, thisExperience: Int, thisCharisma:Int, thisAttractiveness: Int, thisAuthenticity: Int, thisNoteriety: Int, thisIntelligence: Int, thisHealthcare: Double, thisGayMarriage: Double, thisHomelandSecurity: Double, thisImmigration: Double, thisTaxCode: Double, thisBusinessTaxes: Double, thisOutsourcing: Double, thisCleanEnergy: Double, thisLegalPot: Double, thisCriminalJustice: Double, thisChildrensEducation: Double, thisPostSecondary: Double, thisFracking: Double, thisSocialSecurity: Double, thisMedicareMedicaid: Double, thisGovernmentSpending: Double, thisGunControl: Double, thisClimateChange: Double, parties:[(party:PoliticalParty,percentage:Double)])
   {
     stateName = thisState
     statePopulation = thisPopulation
@@ -47,6 +49,7 @@ class State: Traits {
     governmentSpending = thisGovernmentSpending
     gunControl = thisGunControl
     climateChange = thisClimateChange
+    politicalParties = parties
   }
 
   

@@ -17,6 +17,7 @@
 		3C07CE091C727DAD007F01BF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE081C727DAD007F01BF /* State.swift */; };
 		3C07CE0B1C727E63007F01BF /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE0A1C727E63007F01BF /* Simulation.swift */; };
 		3C07CE0D1C729341007F01BF /* StatesForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE0C1C729341007F01BF /* StatesForTesting.swift */; };
+		3C07CE0F1C73D94B007F01BF /* PoliticalParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07CE0E1C73D94B007F01BF /* PoliticalParty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3C07CE081C727DAD007F01BF /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3C07CE0A1C727E63007F01BF /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		3C07CE0C1C729341007F01BF /* StatesForTesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesForTesting.swift; sourceTree = "<group>"; };
+		3C07CE0E1C73D94B007F01BF /* PoliticalParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoliticalParty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3C07CE041C727347007F01BF /* Traits.swift */,
 				3C07CE061C727B1D007F01BF /* Candidate.swift */,
 				3C07CE081C727DAD007F01BF /* State.swift */,
+				3C07CE0E1C73D94B007F01BF /* PoliticalParty.swift */,
 				3C07CE0A1C727E63007F01BF /* Simulation.swift */,
 				3C07CDF61C7271B0007F01BF /* Main.storyboard */,
 				3C07CDF91C7271B0007F01BF /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C07CE0F1C73D94B007F01BF /* PoliticalParty.swift in Sources */,
 				3C07CDF51C7271B0007F01BF /* ViewController.swift in Sources */,
 				3C07CE051C727347007F01BF /* Traits.swift in Sources */,
 				3C07CDF31C7271B0007F01BF /* AppDelegate.swift in Sources */,
@@ -306,6 +310,7 @@
 				3C07CE031C7271B0007F01BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
