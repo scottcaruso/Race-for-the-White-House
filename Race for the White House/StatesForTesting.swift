@@ -132,7 +132,7 @@ func randomNegativeValue() -> Double {
 }
 
 func randomPartyIDValue() -> Double {
-  let value = (Double(arc4random_uniform(11))+29)
+  let value = (Double(arc4random_uniform(11))+22)
   let decimalValue = (Double(arc4random())/Double(UINT32_MAX))
   let totalValue = value+decimalValue
   return totalValue

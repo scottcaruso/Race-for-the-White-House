@@ -9,6 +9,11 @@
 import Foundation
 
 class Simulation {
+    
+/* The below function takes an array of the candidates and a single state, then calculates each candidate's performance relative to that state's traits.
+
+    Right now, it is using very basic calculations for the party support - candidates always receive 90% of support of members of their own party. The other 10% remain in the independent column.
+*/
   
     func getCandidatePerformance(candidates:[Candidate], state:State) -> [String:(lockedpercentage:Double,stateDiff:Double)] {
     var candidateDictionary = [String:(lockedpercentage:Double,stateDiff:Double)]()
@@ -45,8 +50,14 @@ class Simulation {
         candidateDictionary[candidate.0] = candidateTuple
       }
     }
+        
     return candidateDictionary
   }
+    
+/* The below function takes in a dictionary with the candidate names as the Keys and tuple of their party support (a Double called .lockedpercentage) and a Double that represents how far they differ from the ideal candidate for the state (.stateDiff)
+    
+    A candidate is assumed to have "locked in" their party support, and it then uses the remaining independent voters to compare which of the two candidates is closes to what the state desires. Once it does that, it returns a tuple with a string to print to the console and the name of the winner.
+*/
   
   func calculateWinner(candidateData: [String:(lockedpercentage:Double,stateDiff:Double)], state:State) -> (winnerString:String,winnerName:String) {
     let candidateCount = candidateData.count
@@ -80,6 +91,8 @@ class Simulation {
       return("Sorry, we can only currently calculate 2 candidate races.","N/A")
     }
   }
+    
+//The below function is what ties the above two functions together; it runs through each state in a states array, calculates the winner of each, and then calls the election when one candidate reaches 270 or more electoral votes.
   
   func electionNight(candidates:[Candidate], states:[State]) {
     var totalElectoralVotes = 0
@@ -113,6 +126,8 @@ class Simulation {
     //sleep(2)
     }
   }
+    
+//This function below merely generates a random double between -5.0 and 5.0 that is applied to every candidate to simulate "randomness" or unpredictability in the electorate.
   
   func randomness() -> Double {
     var value = (Double(arc4random())/Double(UINT32_MAX))*5
