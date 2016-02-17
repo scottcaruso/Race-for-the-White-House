@@ -10,10 +10,27 @@ import Foundation
 
 class Simulation {
   
-  func getCandidatePerformance(candidates:[Candidate], state:State) -> [String:Double] {
+    func getCandidatePerformance(candidates:[Candidate], state:State) -> [String:(lockedpercentage:Double,stateDiff:Double)] {
+    var candidateDictionary = [String:(lockedpercentage:Double,stateDiff:Double)]()
+    
+    for candidate in candidates {
+      candidateDictionary[candidate.candidateName] = (0.0,0.0)
+    }
+    
+    if let parties = state.politicalParties {
+      for party in parties {
+        let thisParty = party.party
+        for candidate in candidates {
+          if thisParty.partyName == candidate.candidateParty.partyName {
+            let candidatePartySupport = party.percentage*0.9
+            candidateDictionary[candidate.candidateName] = (candidatePartySupport,0.0)
+          }
+        }
+      }
+    }
+    
     let stateAverage = state.averagePoliticalTraitValue
     var candidateAverages = [String:Double]()
-    var candidateDiffFromState = [String:Double]()
     for candidate in candidates {
       candidateAverages[candidate.candidateName] = candidate.averagePoliticalTraitValue+randomness()
     }
@@ -23,28 +40,36 @@ class Simulation {
       if stateDelta < 0 {
         stateDelta = stateDelta * -1.0
       }
-      candidateDiffFromState[candidate.0] = stateDelta
+      if var candidateTuple = candidateDictionary[candidate.0] {
+        candidateTuple.stateDiff = stateDelta
+        candidateDictionary[candidate.0] = candidateTuple
+      }
     }
-    return candidateDiffFromState
+    return candidateDictionary
   }
   
-  func calculateWinner(candidateData: [String:Double], state:State) -> (winnerString:String,winnerName:String) {
+  func calculateWinner(candidateData: [String:(lockedpercentage:Double,stateDiff:Double)], state:State) -> (winnerString:String,winnerName:String) {
     let candidateCount = candidateData.count
-    let defaultPercentage = Double(100)/Double(candidateCount)
+    var defaultPercentage = 100.0
     if candidateCount == 2 {
-      let secondaryDictionary = candidateData.dropFirst()
-      if let candidateOne = candidateData.first, candidateTwo = secondaryDictionary.first {
-        let candidateOneShare = candidateOne.1
-        let candidateTwoShare = candidateTwo.1
-        let candidateOnePercentage = defaultPercentage - candidateOneShare + candidateTwoShare
-        var winnerName: String
-        var winnerPercentage: Double
-        if candidateOnePercentage > 50.0 {
+        for candidate in candidateData {
+            let thisCandidateLocked = candidate.1.lockedpercentage
+            defaultPercentage -= thisCandidateLocked
+        }
+        let secondaryDictionary = candidateData.dropFirst()
+        if let candidateOne = candidateData.first, candidateTwo = secondaryDictionary.first {
+            let candidateOneShare = candidateOne.1.stateDiff
+            let candidateTwoShare = candidateTwo.1.stateDiff
+            let candidateOneIndependentPercentage = defaultPercentage/Double(candidateCount) - candidateOneShare + candidateTwoShare
+            let candidateOneTotalPercentage = candidateOneIndependentPercentage + candidateOne.1.lockedpercentage
+            var winnerName: String
+            var winnerPercentage: Double
+        if candidateOneTotalPercentage > 50.0 {
           winnerName = candidateOne.0
-          winnerPercentage = candidateOnePercentage
+          winnerPercentage = candidateOneTotalPercentage
         } else {
           winnerName = candidateTwo.0
-          winnerPercentage = 100 - candidateOnePercentage
+          winnerPercentage = 100 - candidateOneTotalPercentage
         }
         winnerPercentage = Double(round(10*winnerPercentage)/10)
         return("\(winnerName) has won the state of \(state.stateName)'s \(state.stateElectoralVotes) electoral votes, claiming \(winnerPercentage)% of the overall vote.\n\n",winnerName)
