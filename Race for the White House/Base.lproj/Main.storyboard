@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmd-3s-ApL">
+                                <rect key="frame" x="242" y="285" width="116" height="30"/>
+                                <state key="normal" title="Rerun Simulation"/>
+                                <connections>
+                                    <action selector="rerunSimulation" destination="BYZ-38-t0r" eventType="touchUpInside" id="58p-eh-TaO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pmd-3s-ApL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o6O-eC-hjy"/>
+                            <constraint firstItem="pmd-3s-ApL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zR3-2r-vHe"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -110,7 +110,7 @@ class Simulation {
       } else if candidateOneVotes == neededToWin && candidateTwoVotes == neededToWin {
         print("I don't believe it! We have a tie!")
       }
-    sleep(2)
+    //sleep(2)
     }
   }
   

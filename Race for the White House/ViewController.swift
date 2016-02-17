@@ -9,24 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var simulationEngine: Simulation?
 
   override func viewDidLoad() {
+    
     super.viewDidLoad()
     
-    let candidateOne = Candidate(thisName: "Hillary Clinton", thisExperience: 25, thisCharisma: 25, thisAttractiveness: 25, thisAuthenticity: 25, thisNoteriety: 25, thisIntelligence: 25, thisHealthcare: randomNegativeValue() , thisGayMarriage: randomNegativeValue() , thisHomelandSecurity: randomNegativeValue() , thisImmigration: randomNegativeValue() , thisTaxCode: randomNegativeValue(), thisBusinessTaxes: randomNegativeValue(), thisOutsourcing: randomNegativeValue() , thisCleanEnergy: randomNegativeValue() , thisLegalPot: randomNegativeValue() , thisCriminalJustice: randomNegativeValue() , thisChildrensEducation: randomNegativeValue(), thisPostSecondary: randomNegativeValue() , thisFracking: randomNegativeValue(), thisSocialSecurity: randomNegativeValue(), thisMedicareMedicaid: randomNegativeValue(), thisGovernmentSpending: randomNegativeValue(), thisGunControl: randomNegativeValue(), thisClimateChange: randomNegativeValue(), thisParty: democrats)
-  
-    let candidateTwo = Candidate(thisName: "Donald Trump", thisExperience: 0, thisCharisma: 50, thisAttractiveness: 15, thisAuthenticity: 30, thisNoteriety: 50, thisIntelligence: 30, thisHealthcare: randomNegativeValue() , thisGayMarriage: randomNegativeValue() , thisHomelandSecurity: randomNegativeValue() , thisImmigration: randomNegativeValue() , thisTaxCode: randomNegativeValue(), thisBusinessTaxes: randomNegativeValue(), thisOutsourcing: randomNegativeValue() , thisCleanEnergy: randomNegativeValue() , thisLegalPot: randomNegativeValue() , thisCriminalJustice: randomNegativeValue() , thisChildrensEducation: randomNegativeValue(), thisPostSecondary: randomNegativeValue() , thisFracking: randomNegativeValue(), thisSocialSecurity: randomNegativeValue(), thisMedicareMedicaid: randomNegativeValue(), thisGovernmentSpending: randomNegativeValue(), thisGunControl: randomNegativeValue(), thisClimateChange: randomNegativeValue(), thisParty: republicans)
+    simulationEngine = Simulation()
     
-    let simulationEngine = Simulation()
-    
-    let states = [alabama,alaska,arizona,arkansas,california,colorado,connecticut,delaware,florida,georgia,hawaii,idaho,illinois,indiana,iowa,kansas,kentucky,louisiana,maine,maryland,massachusetts,michigan,minnesota,mississippi,missouri,montana,nebraska,nevada,newHampshire,newJersey,newMexico,newYork,northCarolina,northDakota,ohio,oklahoma,oregon,pennsylvania,rhodeIsland,southCarolina,southDakota,tennessee,texas,utah,vermont,virginia,washington,westVirginia,wisconsin,wyoming,dc]
     print("\(candidateOne.candidateName): \(candidateOne.averagePoliticalTraitValue)")
     print("\(candidateTwo.candidateName): \(candidateTwo.averagePoliticalTraitValue)")
     for state in states {
       print("\(state.stateName): \(state.averagePoliticalTraitValue)")
     }
     
-    simulationEngine.electionNight([candidateOne,candidateTwo], states: states)
+    simulationEngine!.electionNight([candidateOne,candidateTwo], states: states)
 }
   
   
@@ -44,6 +42,11 @@ class ViewController: UIViewController {
     }
     return value
   }
+    
+    @IBAction func rerunSimulation() {
+        
+    simulationEngine!.electionNight([candidateOne,candidateTwo], states: states)
+    }
 
 
 }
