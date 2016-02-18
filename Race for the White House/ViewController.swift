@@ -9,14 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var simulationEngine: Simulation?
 
   override func viewDidLoad() {
     
     super.viewDidLoad()
-    
-    simulationEngine = Simulation()
     
     print("\(candidateOne.candidateName): \(candidateOne.averagePoliticalTraitValue)")
     print("\(candidateTwo.candidateName): \(candidateTwo.averagePoliticalTraitValue)")
@@ -24,7 +20,7 @@ class ViewController: UIViewController {
       print("\(state.stateName): \(state.averagePoliticalTraitValue)")
     }
     
-    simulationEngine!.electionNight([candidateOne,candidateTwo], states: states)
+    electionNight([candidateOne,candidateTwo], states: states)
 }
   
   
@@ -45,7 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func rerunSimulation() {
         
-    simulationEngine!.electionNight([candidateOne,candidateTwo], states: states)
+    electionNight([candidateOne,candidateTwo], states: states)
     }
 
 

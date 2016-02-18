@@ -12,7 +12,7 @@ import Foundation
 class Traits {
   
   //Personal traits
-  //These are the traits that are inherit to each politician and not reflective of political positions. These MIN at 0 and MAX at 50, and each state has various personal traits that it likes to see from politicians.
+  //These are the traits that are inherit to each politician and not reflective of political positions. These MIN at 0 and MAX at 20, and each state has various personal traits that it likes to see from politicians.
   
   var experience = 20
   var charisma = 20
